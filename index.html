@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Progress</title>
+    <link rel="stylesheet" href="app.css" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app" :style="[styleObject, {display: 'block'}]">
+    <div class="container">
+    <h1>
+{{ title }}
+    </h1>
+      <br />
+      <div class="progress" :style="[vueGrad, {width : progressWidth + '%'}]"></div>
+      <span>{{ progressWidth }}{{ percent }}</span>
+      <br /><br />
+  
+      <button :style="vueGrad" @click.once="startProgress">{{ start }}</button>
+      <button v-html="reset" :style="[vueGrad, {opacity: 0.8}]" @click="resetProgress">{{ reset }}</button>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
